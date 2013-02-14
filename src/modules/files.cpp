@@ -21,7 +21,7 @@ namespace Modules {
 		throw(errno);
 	}
 
-	int test() {
+	int factorial(int input) {
 
 		// this is just a temp test element
 		return 5;

@@ -12,7 +12,7 @@ namespace Modules {
 
 	std::string getFileContents(const char *);
 
-	int test();
+	int factorial(int);
 
 }
 
