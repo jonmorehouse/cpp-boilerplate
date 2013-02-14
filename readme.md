@@ -18,10 +18,10 @@ Google Sparsehash Libary = Google Dictionary Library for C++
 Compilation
 =
 
-Want to have our tests in their own seperate directory etc
+Using CMAKE for the first time. This program should be easily forkable so that I can very quickly start programs off with a running config setup. 
 
-
-base 
+Directory Structure
+-
 
 	Makefile
 	output
@@ -36,4 +36,14 @@ base
 		classes
 		main.cpp
 		Makefile
-		
+
+
+Development Stages
+=
+
+-	Get CMAKE compilation setup
+-	Set up file reading
+-	Set up JSON Parsing
+-	Set up Config Structure
+-	Set up Google Test Library
+
