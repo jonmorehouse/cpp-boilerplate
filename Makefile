@@ -1,20 +1,18 @@
-# -L = what directory to look in
-# -l = which library to use
-INCLUDE = 
-LIBRARIES = 
-PACKAGES = jansson
+# force make on certain systems
+.PHONY: all test clean
 
-COMPILER = g++
-COMPILERFLAGS = -O3 $(INCLUDE) $(pkg-config --libs --cflags $(PACKAGES))
+# make the current program
+all:
+	cd src && $(MAKE)
 
-PROGRAM = current
-SOURCE = $(CURRENT_FILE).cpp
-OBJECT = $(CURRENT_FILE).o
+# test suite running
+test:
+	cd test && $(MAKE)
 
-.cpp.o: 
-	$(COMPILER) -c $(COMPILERFLAGS) $<
-
-all: $(PROGRAM)
-
+# force clean on the entire project
 clean:
-	-rm -rf *.o *~ .*~ $(PROGRAM)
+	cd src && $(MAKE) clean
+	cd ..
+	cd test && $(MAKE) clean
+
+
