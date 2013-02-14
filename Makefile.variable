@@ -1,0 +1,14 @@
+# declare dependencies
+INCLUDE = -I/Users/MorehouseJ09/Documents/programs/cpp/json/include
+ 
+LIBRARIES =
+PACKAGES = jansson
+
+# compilar options
+COMPILER = g++
+COMPILERFLAGS = -O3 $(INCLUDE) $(pkg-config --libs --cflags $(PACKAGES))
+
+# output
+PROGRAM = current
+SOURCE = *.cpp modules/*.cpp classes/*.cpp
+

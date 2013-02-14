@@ -41,8 +41,6 @@ Directory Structure
 Development Stages
 =
 
--	Get CMAKE compilation setup
--	Set up file reading
 -	Set up JSON Parsing
 -	Set up Config Structure
 -	Set up Google Test Library

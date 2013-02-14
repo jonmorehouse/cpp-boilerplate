@@ -1,5 +1,5 @@
 #ifndef MODULES_HPP
-#defined MODULES_HPP
+#define MODULES_HPP
 
 // include c++ specific libraries
 #include <cerrno>
