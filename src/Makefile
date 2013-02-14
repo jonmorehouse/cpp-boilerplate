@@ -3,10 +3,9 @@
 include ../Makefile.variable
 
 # make directives
-all: modules.o *.cpp
+all: modules.o *.cpp 
 
 	$(COMPILER) -o $(PROGRAM) modules.o *.cpp $(COMPILERFLAGS)
-
 
 # create a modules object
 modules.o: modules/*.cpp 

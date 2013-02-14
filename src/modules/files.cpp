@@ -1,4 +1,4 @@
-#include "./modules.hpp"
+#include "modules/modules.hpp"
 
 // 
 namespace Modules {
@@ -19,5 +19,12 @@ namespace Modules {
 		}
 
 		throw(errno);
+	}
+
+	int test() {
+
+		// this is just a temp test element
+		return 5;
+
 	}
 }

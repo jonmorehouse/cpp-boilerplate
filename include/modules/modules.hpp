@@ -5,12 +5,14 @@
 #include <cerrno>
 #include <string>
 #include <fstream>
+#include <jansson.h>
 
 // prototypes
 namespace Modules {
 
-
 	std::string getFileContents(const char *);
+
+	int test();
 
 }
 

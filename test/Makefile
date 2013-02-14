@@ -7,14 +7,19 @@ PROGRAM = test
 PACKAGES += googletest googlemock
 
 # master test
-all: modules.o *.cpp
+all: module_tests.o modules.o *.cpp
+		
+	$(COMPILER) -o $(PROGRAM) modules.o module_tests.o *.cpp $(COMPILERFLAGS)
+
+# modules directive -- we need to compile our source code to be able to test it!
+modules.o: ../src/modules/*.cpp 
 	
-	$(COMPILER) -o $(PROGRAM) modules.o *.cpp $(COMPILERFLAGS)
+	$(COMPILER) -o modules.o -c $(COMPILERFLAGS) ../src/modules/*.cpp
 
-# modules directive
-modules.o: modules/*.cpp modules/*.hpp
+# module tests
+module_tests.o: modules/*.cpp
 
-	$(COMPILER) -o modules.o -c $(COMPILERFLAGS) modules/*.cpp
+	$(COMPILER) -o module_tests.o -c $(COMPILERFLAGS) modules/*.cpp
 
 # create a classes object
 classes.o: classes/*.cpp classes/*.hpp
