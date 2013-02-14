@@ -1,15 +1,30 @@
 # include program variables
 include ../Makefile.variable
 
-
 PROGRAM = test
 # append testing only libraries
 PACKAGES += googletest googlemock
 
+# google test source location
+GOOGLETEST = /Users/MorehouseJ09/Documents/general_development/public_code/googletest
+
+# INCLUDE THE GOOGLE TEST DIRS
+INCLUDE += -I${GOOGLETEST}/include
+INCLUDE += -I${GOOGLETEST}
+
+# DECLARE TEST DEPENDENCIES
+TEST_DEPENDENCIES = libgtest.a module_tests.o modules.o *.cpp
+
 # master test
-all: module_tests.o modules.o *.cpp
-		
-	$(COMPILER) -o $(PROGRAM) modules.o module_tests.o *.cpp $(COMPILERFLAGS)
+all: $(TEST_DEPENDENCIES)
+
+	$(COMPILER) $(COMPILERFLAGS) -o test.out $(TEST_DEPENDENCIES)
+
+libgtest.a: 
+
+	$(COMPILER) $(COMPILERFLAGS) -c ${GOOGLETEST}/src/gtest-all.cc
+	ar -rv libgtest.a gtest-all.o
+
 
 # modules directive -- we need to compile our source code to be able to test it!
 modules.o: ../src/modules/*.cpp 
