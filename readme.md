@@ -2,9 +2,11 @@ CPP JSON Initializer
 =
 
 Overview
--
+=
 
-The goal of this project is to create a base program that includes a basic configuration json encoding. The idea with this is that a config file can be set / passed to the program and this base code will encode the json into a configuration object that will always be available.
+The goal of this program is to create a quick boilerplate solution to solving c++ problems. I'm hoping with this that I can get a basic TDD program up and running in minutes without having to worry about compilation errors, Makefile debugging etc. 
+
+I'm also planning to implement a basic config library integration to allow for the loading of json data via Jansson library.
 
 Libraries
 =
