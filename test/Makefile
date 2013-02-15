@@ -6,25 +6,30 @@ PROGRAM = test
 PACKAGES += googletest googlemock
 
 # google test source location
-GOOGLETEST = /Users/MorehouseJ09/Documents/general_development/public_code/googletest
+GOOGLETEST = /usr/local/src/googletest
+GOOGLEMOCK = /usr/local/src/googlemock
 
 # INCLUDE THE GOOGLE TEST DIRS
-INCLUDE += -I${GOOGLETEST}/include
-INCLUDE += -I${GOOGLETEST}
+INCLUDE += -I${GOOGLETEST}/include -I${GOOGLETEST}
+INCLUDE += -I${GOOGLEMOCK}/include -I${}
 
 # DECLARE TEST DEPENDENCIES
-TEST_DEPENDENCIES = libgtest.a module_tests.o modules.o *.cpp
+TEST_DEPENDENCIES = googletest.a googlemock.a module_tests.o modules.o *.cpp
 
 # master test
 all: $(TEST_DEPENDENCIES)
 
 	$(COMPILER) $(COMPILERFLAGS) -o test.out $(TEST_DEPENDENCIES)
 
-libgtest.a: 
+googletest.a: 
 
 	$(COMPILER) $(COMPILERFLAGS) -c ${GOOGLETEST}/src/gtest-all.cc
-	ar -rv libgtest.a gtest-all.o
+	ar -rv googletest.a googletest.o
 
+googlemock.a:
+
+	$(COMPILER) $(COMPILERFLAGS) -c ${GOOGLEMOCK}/src/gmock-all.cc
+	ar -rv googlemock.a googlemock.o
 
 # modules directive -- we need to compile our source code to be able to test it!
 modules.o: ../src/modules/*.cpp 
