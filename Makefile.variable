@@ -1,7 +1,7 @@
 # declare google test source code location
 
 # declare dependencies
-INCLUDE = -I/Users/MorehouseJ09/Documents/programs/cpp/json/include
+INCLUDE = -I/Users/MorehouseJ09/Documents/programs/cpp/cpp_boilerplate/include
 
  
 LIBRARIES =

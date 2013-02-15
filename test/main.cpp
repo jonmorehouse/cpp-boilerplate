@@ -12,8 +12,11 @@
 
 TEST(FactorialTest, Negative) {
 
-	
 	EXPECT_EQ(5, Modules::factorial(0));
+
+	EXPECT_EQ(3, Modules::factorial(2));
+
+	
 
 }
 

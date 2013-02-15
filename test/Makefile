@@ -11,24 +11,24 @@ GOOGLEMOCK = /usr/local/src/googlemock
 
 # INCLUDE THE GOOGLE TEST DIRS
 INCLUDE += -I${GOOGLETEST}/include -I${GOOGLETEST}
-INCLUDE += -I${GOOGLEMOCK}/include -I${}
+INCLUDE += -I${GOOGLEMOCK}/include -I${GOOGLEMOCK}
 
 # DECLARE TEST DEPENDENCIES
-TEST_DEPENDENCIES = googletest.a googlemock.a module_tests.o modules.o *.cpp
+TEST_DEPENDENCIES = googletest.a googlemock.a modules.o *.cpp
 
 # master test
 all: $(TEST_DEPENDENCIES)
 
-	$(COMPILER) $(COMPILERFLAGS) -o test.out $(TEST_DEPENDENCIES)
+	$(COMPILER) -o test.out $(COMPILERFLAGS) $(TEST_DEPENDENCIES)
 
 googletest.a: 
 
-	$(COMPILER) $(COMPILERFLAGS) -c ${GOOGLETEST}/src/gtest-all.cc
+	$(COMPILER) -o googletest.o $(COMPILERFLAGS) -c ${GOOGLETEST}/src/gtest-all.cc
 	ar -rv googletest.a googletest.o
 
 googlemock.a:
 
-	$(COMPILER) $(COMPILERFLAGS) -c ${GOOGLEMOCK}/src/gmock-all.cc
+	$(COMPILER) -o googlemock.o $(COMPILERFLAGS) -c ${GOOGLEMOCK}/src/gmock-all.cc
 	ar -rv googlemock.a googlemock.o
 
 # modules directive -- we need to compile our source code to be able to test it!
