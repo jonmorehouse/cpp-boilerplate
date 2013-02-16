@@ -3,7 +3,7 @@ include ../Makefile.variable
 
 PROGRAM = test
 # append testing only libraries
-PACKAGES += googletest googlemock
+PACKAGES += 
 
 # google test source location
 GOOGLETEST = /usr/local/src/googletest

@@ -9,7 +9,7 @@ PACKAGES = jansson
 
 # compilar options
 COMPILER = g++
-COMPILERFLAGS = -O3 $(INCLUDE) $(pkg-config --libs --cflags $(PACKAGES))
+COMPILERFLAGS = -g -O3 $(INCLUDE) $(shell pkg-config --libs --cflags $(PACKAGES))
 
 # output
 PROGRAM = current
