@@ -10,10 +10,11 @@
 // prototypes
 namespace Modules {
 
-	std::string getFileContents(const char *);
+	std::string getFileContents(const char *);//get the files of a file into a string
 
-	int factorial(int);
+	json_t * getConfig(const char *);//pass in a string of json to the getConfig and it will return a valid configuration hash back
 
+	json_t * getConfigFromFile(const char *);//get the contents from a file 
 }
 
 #endif

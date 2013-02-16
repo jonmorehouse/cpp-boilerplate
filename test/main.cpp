@@ -6,19 +6,9 @@
 
 // include project libraries
 #include "modules/modules.hpp"
-#include "gtest/gtest.h"
+// #include "modules/config_test.hpp"
+#include <gtest/gtest.h>
 
-// ::testing::InitGoogleTest
-
-TEST(FactorialTest, Negative) {
-
-	EXPECT_EQ(5, Modules::factorial(0));
-
-	EXPECT_EQ(3, Modules::factorial(2));
-
-	
-
-}
 
 int main(int argc, char ** argv) {
 

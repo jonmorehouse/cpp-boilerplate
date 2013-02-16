@@ -15,16 +15,11 @@ namespace Modules {
 			in.seekg(0, std::ios::beg);//go back to the beginning of the program
 			in.read(&contents[0], contents.size());//read in the contents to the size of the string
 			in.close();//close the file		
+
+			// return the string contents
 			return contents;
 		}
 
 		throw(errno);
-	}
-
-	int factorial(int input) {
-
-		// this is just a temp test element
-		return 5;
-
 	}
 }

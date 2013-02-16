@@ -14,7 +14,7 @@ INCLUDE += -I${GOOGLETEST}/include -I${GOOGLETEST}
 INCLUDE += -I${GOOGLEMOCK}/include -I${GOOGLEMOCK}
 
 # DECLARE TEST DEPENDENCIES
-TEST_DEPENDENCIES = googletest.a googlemock.a modules.o *.cpp
+TEST_DEPENDENCIES = googletest.a googlemock.a module_tests.o modules.o *.cpp
 
 # master test
 all: $(TEST_DEPENDENCIES)
@@ -34,12 +34,12 @@ googlemock.a:
 # modules directive -- we need to compile our source code to be able to test it!
 modules.o: ../src/modules/*.cpp 
 	
-	$(COMPILER) -o modules.o -c $(COMPILERFLAGS) ../src/modules/*.cpp
+	$(COMPILER) -c $(COMPILERFLAGS) ../src/modules/modules.cpp
 
 # module tests
 module_tests.o: modules/*.cpp
 
-	$(COMPILER) -o module_tests.o -c $(COMPILERFLAGS) modules/*.cpp
+	$(COMPILER) -o module_tests.o -c $(COMPILERFLAGS) modules/module_tests.cpp
 
 # create a classes object
 classes.o: classes/*.cpp classes/*.hpp
